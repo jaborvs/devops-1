@@ -1,7 +1,7 @@
 version: '3'
 services:
   student_service:
-    image: jaborvs/student_service:latest
+    image: f493d14afe2c120af3c411a99a7feea827183c7ae1459cfcd2f6d523a054f8e0
     restart: unless-stopped
     depends_on:
       - mongo
