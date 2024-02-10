@@ -42,6 +42,7 @@ def get_student_by_id(student_id):  # noqa: E501
     :param student_id: the uid
     :type student_id: float
 
+    
     :rtype: Student
     """
     return get_by_id(student_id)
