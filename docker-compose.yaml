@@ -9,12 +9,8 @@ services:
       MONGO_URI: mongodb://mongo:27017
     ports:
       - "8080:8080"
-    networks:
-      - dbnet
   mongo:
     restart: unless-stopped
     image: mongo:4
     ports:
       - "27017:27017"
-    networks:
-      - dbnet
