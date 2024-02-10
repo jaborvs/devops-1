@@ -6,9 +6,10 @@ services:
     depends_on:
       - mongo
     environment:
-      MONGO_URI: mongodb://mongodb:27017
+      MONGO_URI: mongodb://mongo:27017
     ports:
       - "8080:8080"
+
   mongo:
     restart: unless-stopped
     image: mongo:4
