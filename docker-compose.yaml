@@ -6,11 +6,23 @@ services:
     depends_on:
       - mongo
     environment:
-      MONGO_URI: mongodb://mongo:27017
+      MONGO_URI: mongodb://172.17.0.3:27017
     ports:
       - "8080:8080"
+    networks:
+      db_network:
+        ipv4_address: 172.17.0.2
   mongo:
     restart: unless-stopped
     image: mongo:4
     ports:
       - "27017:27017"
+    networks:
+      db_network:
+        ipv4_address: 172.17.0.3
+
+networks:
+  db_network:
+    ipam:
+      config:
+        - subnet: 172.17.0.0/16
