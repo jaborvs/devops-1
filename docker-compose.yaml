@@ -1,0 +1,17 @@
+version: '3'
+services:
+  student_service:
+    image: f493d14afe2c120af3c411a99a7feea827183c7ae1459cfcd2f6d523a054f8e0
+    restart: unless-stopped
+    depends_on:
+      - mongo
+    environment:
+      MONGO_URI: mongodb://mongo:27017
+    ports:
+      - "8080:8080"
+
+  mongo:
+    restart: unless-stopped
+    image: mongo:4
+    ports:
+      - "27017:27017"
